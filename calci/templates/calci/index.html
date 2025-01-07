@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Calculator App</h1>
+        <form method="POST" action="/calculate/">
+            
+            {% csrf_token %}
+            <label for="num1">Number 1:</label>
+            <input type="number" id="num1" name="num1" placeholder="Number 1" required/>
+            <br>
+            <br>
+            <label for="num2">Number 2:</label>
+            <input type="number" id="num2" name="num2" placeholder="Number 2" required/>
+            <br>
+            <br>
+            <button type="submit" name="operation" value="ADD">ADD</button>
+            <button type="submit" name="operation" value="SUB">SUB</button>
+            <button type="submit" name="operation" value="MUL">MUL</button>
+            <button type="submit" name="operation" value="DIV">DIV</button>
+        </form>
+        {% if result %}<h2>Result: {{ result }} </h2>
+        {% endif %}
+    </body>
+</html> 
